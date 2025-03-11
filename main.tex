@@ -1,10 +1,7 @@
 %! TeX program = lualatex
 
-%Use one of the two documentclass lines depending on aspect ratio needed
-% for 4x3 aspect ratio slides
-%\documentclass{beamer}
-%for 16x9 (modern wide screen) aspect ratio slides
-\documentclass[9pt,aspectratio=169]{beamer}
+%\documentclass[9pt]{beamer} % for 4x3 aspect ratio slides
+\documentclass[9pt,aspectratio=169]{beamer} % for 16x9 (modern wide screen) aspect ratio slides
 \graphicspath{{img/}{./}}
 \usepackage{csquotes}
 \usepackage[backend=biber,citestyle=authoryear,bibstyle=apa]{biblatex}
@@ -17,19 +14,37 @@
 \usepackage{tikz}
 
 % Fonts ----
-% Custom fonts: https://www.overleaf.com/learn/latex/Questions/I_have_a_custom_font_I%27d_like_to_load_to_my_document._How_can_I_do_this%3F#Using_custom_fonts_with_XeLaTeX_and_LuaLaTeX
+
+% This template uses GoogleFonts. Make sure to read the README.md documentation
+% to install the fonts.
 \usepackage{fontspec}
 
-\usefonttheme{serif}
-%\setmainfont{XCharter}
-%\setsansfont{Cabin}
-%\setmonofont{Source Code Pro}
+\usefonttheme[onlymath]{serif}
+
+% \setmainfont{Rasa}[ % Serif
+%   Path=./fonts/RasaFiles/,
+%   Extension=.ttf,
+%   Scale=0.9,
+%   UprightFont=*-Regular,
+%   BoldFont=*-Bold,
+%   ItalicFont=*-Italic,
+%   BoldItalicFont=*-BoldItalic
+% ]
+
+% \setmainfont{Poppins}[ % Sans
+%  Path=./fonts/PoppinsFiles/,
+%  Extension=.ttf,
+%  Scale=0.9,
+%  UprightFont=*-Regular,
+%  BoldFont=*-Bold,
+%  ItalicFont=*-Italic,
+%  BoldItalicFont=*-BoldItalic
+% ]
 
 % Bibliography
 \addbibresource{bibliography.bib}
 \renewcommand*{\bibfont}{\scriptsize} % Change bibliography text size
 \AtEveryBibitem{\clearfield{title}}
-
 
 % CCG theming
 \usetheme{ccgunam}

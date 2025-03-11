@@ -136,9 +136,9 @@
                 \raggedright
                 \color{white}
                 \usebeamerfont{title}
-                    {\inserttitle\\[0.9cm]}
+                    {\rmfamily\inserttitle\\[0.9cm]}
                 \usebeamerfont{subtitle}
-                    {\sc\insertauthor\\[0.1cm]}
+                    {\bf\insertauthor\\[0.2cm]}
                     {\it\insertinstitute\\[0.3cm]}
                     {\insertdate}
             \end{minipage}
@@ -151,7 +151,7 @@
    \rlap{%
      \begin{beamercolorbox}[sep=\titlevmargin,left,wd=\dimexpr\fullpagewidth-\titlehmargin*2+\titlevmargin*2\relax]{frametitle}%
       \begin{minipage}{\dimexpr\fullpagewidth-\unamlogowidth-\titlehmargin*3-0.1cm\relax}%
-        \strut\insertframetitle\strut\par%
+        \bf\rmfamily\strut\insertframetitle\strut\par%
       \end{minipage}%
       \hspace{\titlehmargin}%
       \begin{minipage}{\dimexpr\unamlogowidth+1mm\relax}%
