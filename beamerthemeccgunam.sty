@@ -5,7 +5,6 @@
 %% v2.0 Reimplementation: Karl Welzel May 2024 (reimplementation from a standard theme)
 %% v2.1 Further adjustments and tweaks: Keith Gillow May 2024
 
-
 % Use infolines as base
 \useoutertheme{infolines} 
 
@@ -30,22 +29,29 @@
   urlcolor = blue
 }
 
-% Add numbers to sections
-\setbeamertemplate{section in toc}[sections numbered]
-\setbeamertemplate{subsection in toc}[subsections numbered]
+% Table of contents customization
+%\setbeamercolor{section in toc}{bg=ccgblue}
+\setbeamertemplate{section in toc}{%
+    \bfseries\large
+    \inserttocsection
+  \par
+}
+\setbeamertemplate{subsection in toc}{%
+  \leavevmode\normalsize
+  \inserttocsubsection\par
+}
 
 \setbeamertemplate{section page}{%
     \begingroup
         \begin{beamercolorbox}[sep=10pt,center,rounded=true,shadow=true]{section title}
-        \usebeamerfont{section title}\thesection~\insertsection\par
+        \usebeamerfont{section title}\bfseries\thesection~\insertsection\par
         \end{beamercolorbox}
     \endgroup
 }
-
 \setbeamertemplate{subsection page}{%
     \begingroup
         \begin{beamercolorbox}[sep=2pt,center,rounded=true,shadow=true]{section title}
-        \usebeamerfont{section title}\thesection~\insertsection\par
+        \usebeamerfont{section title}\bfseries\thesection~\insertsection\par
         \end{beamercolorbox}
         \vspace*{-1.pt}
         \begin{beamercolorbox}[sep=6pt,center,rounded=true,shadow=true]{subsection title}
@@ -54,7 +60,7 @@
     \endgroup
 }
 
-\AtBeginSection[]{%
+\AtBeginSubsection[]{%
     \begin{frame}
         \sectionpage
     \end{frame}
@@ -111,7 +117,6 @@
 % change block styles
 % Change alert block colors
 
-
 % cool commands to highlight text
 \newcommand{\highlight}[1]{\textbf{\color{unamgold} #1}}
 
@@ -136,10 +141,10 @@
                 \raggedright
                 \color{white}
                 \usebeamerfont{title}
-                    {\inserttitle\\[0.9cm]}
+                    {\bfseries\rmfamily\huge\inserttitle\\[2cm]}
                 \usebeamerfont{subtitle}
-                    {\sc\insertauthor\\[0.1cm]}
-                    {\it\insertinstitute\\[0.3cm]}
+                    {\insertauthor\\[0.2cm]}
+                    {\it\insertinstitute\\[0.5cm]}
                     {\insertdate}
             \end{minipage}
         }
@@ -151,7 +156,7 @@
    \rlap{%
      \begin{beamercolorbox}[sep=\titlevmargin,left,wd=\dimexpr\fullpagewidth-\titlehmargin*2+\titlevmargin*2\relax]{frametitle}%
       \begin{minipage}{\dimexpr\fullpagewidth-\unamlogowidth-\titlehmargin*3-0.1cm\relax}%
-        \strut\insertframetitle\strut\par%
+        \strut\insertframetitle\strut\par%  % Use the default roman font
       \end{minipage}%
       \hspace{\titlehmargin}%
       \begin{minipage}{\dimexpr\unamlogowidth+1mm\relax}%
